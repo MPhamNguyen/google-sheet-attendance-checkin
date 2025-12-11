@@ -147,6 +147,8 @@ void loop() {
   lcd.setCursor(0,1);
   lcd.print(info);
 
+  tone(buzzer,3000,700);
+
   // Halt communication with the card
   mfrc522.PICC_HaltA();
   mfrc522.PCD_StopCrypto1();
@@ -168,7 +170,7 @@ void loop() {
 
   http.end(); //Disconnect request
 
-  tone(buzzer,3000,700);
+  tone(buzzer,1000,700);
 
   delay(2000);  // Delay for readability
 }
